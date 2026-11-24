@@ -1,0 +1,112 @@
+.doc-flow {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin: 0;
+}
+
+.doc-flow__line {
+  width: 50%;
+  height: 1.125rem;
+  border-right: 1px solid #798992;
+}
+
+.doc-flow__fields {
+  padding: 0.3125rem var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-panel);
+  background-color: var(--color-surface);
+
+  @media (width >= 480px) {
+    padding: 0.4375rem 0.875rem;
+  }
+}
+
+.doc-flow__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-3);
+  padding-block: 0.875rem;
+  font-size: var(--fs-micro);
+
+  @media (width >= 480px) {
+    flex-wrap: nowrap;
+    font-size: 0.8125rem;
+  }
+}
+
+.doc-flow__row + .doc-flow__row {
+  border-top: 1px solid var(--color-border);
+}
+
+.doc-flow__label {
+  flex: 1 1 45%;
+  color: var(--color-text-muted);
+}
+
+.doc-flow__value {
+  flex: 1 1 45%;
+  font-weight: 450;
+  font-variant-numeric: tabular-nums;
+
+  @media (width >= 480px) {
+    flex-basis: 50%;
+  }
+}
+
+.doc-flow__value--review {
+  color: var(--color-amber);
+}
+
+.doc-flow__status {
+  flex: 0 0 auto;
+  margin-inline-start: auto;
+}
+
+.doc-flow__arrow {
+  margin: var(--space-2) auto;
+  color: #9aa9b2;
+}
+
+.doc-flow__gate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  width: 100%;
+  margin-inline: auto;
+  padding: var(--space-3);
+  border: 1px solid var(--color-amber-border);
+  border-radius: var(--radius);
+  color: var(--color-amber);
+  font-size: var(--fs-small);
+
+  @media (width >= 480px) {
+    width: 90%;
+  }
+}
+
+.doc-flow__after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: var(--space-3);
+  font-size: var(--fs-micro);
+}
+
+.doc-flow__destination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.875rem;
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+  padding: 0.875rem 1.375rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  font-size: 0.9375rem;
+}

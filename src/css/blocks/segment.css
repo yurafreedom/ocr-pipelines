@@ -1,0 +1,118 @@
+.segment {
+  display: flex;
+  flex-direction: column;
+  gap: 1.375rem;
+  padding-block: 1.875rem;
+  border-bottom: 1px solid var(--color-border);
+
+  @media (width >= 1024px) {
+    flex-direction: row;
+    gap: 6%;
+    padding-block: 2.375rem;
+  }
+
+  &:first-child {
+    padding-top: 0;
+  }
+}
+
+.segment__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+
+  @media (width >= 1024px) {
+    position: sticky;
+    top: calc(var(--header-h) + var(--space-5));
+    flex: 0 0 27%;
+    align-self: flex-start;
+  }
+}
+
+.segment__icon {
+  color: var(--color-text-soft);
+}
+
+.segment__title {
+  font-size: clamp(1.625rem, 2vw, 1.8rem);
+}
+
+.segment__tag {
+  font-size: var(--fs-small);
+}
+
+.segment__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  max-width: 74ch;
+
+  @media (width >= 1024px) {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
+
+.segment__label {
+  display: block;
+  margin-bottom: var(--space-1);
+  color: #a7b6bf;
+  font-size: var(--fs-small);
+  font-weight: 400;
+}
+
+.segment__num {
+  color: var(--color-amber);
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+.segment__costs-title {
+  margin-bottom: calc(-1 * var(--space-3));
+  color: #a7b6bf;
+  font-size: var(--fs-small);
+  font-weight: 400;
+}
+
+.segment__costs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.segment__cost {
+  position: relative;
+  padding-inline-start: var(--space-5);
+  color: var(--color-text-muted);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0.7em;
+    left: 0;
+    width: 0.5rem;
+    height: 1px;
+    background-color: var(--color-text-muted);
+  }
+}
+
+.segment__build,
+.segment__change {
+  color: var(--color-text);
+}
+
+.segment__links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1) var(--space-6);
+
+  @media (width >= 480px) {
+    flex-flow: row wrap;
+  }
+}
+
+/* tab mode (segments.js, below 768px only): one card at a time */
+.segment.is-inactive {
+  display: none;
+}

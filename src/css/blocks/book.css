@@ -1,0 +1,61 @@
+.book__columns {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+
+  @media (width >= 1024px) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.book__calendly,
+.book__form {
+  min-width: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-panel);
+  background-color: var(--color-surface);
+
+  @media (width >= 1024px) {
+    flex: 1 1 0;
+  }
+}
+
+.book__calendly {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  height: 700px; /* reserved for the inline Calendly iframe (height: 100%) — no layout shift on load */
+}
+
+.book__calendly-fallback {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);
+  padding: var(--space-6);
+}
+
+.book__calendly-icon {
+  color: var(--color-text-soft);
+}
+
+.book__form {
+  padding: clamp(1.125rem, 2.5vw, 2rem);
+}
+
+.book__form-title {
+  margin-bottom: var(--space-5);
+  font-size: var(--fs-h3);
+}
+
+.book__direct {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  margin-top: var(--space-6);
+  font-size: var(--fs-small);
+}

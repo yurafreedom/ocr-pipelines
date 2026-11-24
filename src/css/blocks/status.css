@@ -1,0 +1,19 @@
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+}
+
+.status__icon {
+  opacity: 1;
+}
+
+.status--ok {
+  color: var(--color-green);
+}
+
+.status--review {
+  color: var(--color-amber);
+}

@@ -1,0 +1,23 @@
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding-block: var(--space-2);
+  color: var(--color-text);
+  font-size: 1rem;
+  text-decoration: underline;
+  text-decoration-color: var(--color-link-underline);
+  text-underline-offset: 5px;
+  transition:
+    color var(--duration) ease,
+    text-decoration-color var(--duration) ease;
+
+  &:hover {
+    color: #fff;
+    text-decoration-color: var(--color-amber);
+  }
+
+  &:active {
+    color: var(--color-amber);
+  }
+}

@@ -1,0 +1,4 @@
+.container {
+  width: min(100% - 2 * max(var(--gutter), env(safe-area-inset-left), env(safe-area-inset-right)), 1390px);
+  margin-inline: auto;
+}

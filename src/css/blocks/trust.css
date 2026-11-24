@@ -1,0 +1,52 @@
+.trust {
+  padding-block: 1.75rem;
+  border-block: 1px solid var(--color-border);
+}
+
+.trust__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6) var(--space-4);
+
+  @media (width >= 1024px) {
+    flex-wrap: nowrap;
+    gap: var(--space-6);
+  }
+}
+
+.trust__item {
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  max-width: 13.75rem;
+  margin-inline: auto;
+  text-align: center;
+
+  /* 340px is below the standard breakpoints on purpose: 2×2 on every phone except the narrowest */
+  @media (width >= 340px) {
+    flex-basis: calc(50% - var(--space-4) / 2);
+  }
+
+  @media (width >= 1024px) {
+    flex: 1 1 0;
+    max-width: none;
+    padding-inline: var(--space-4);
+  }
+}
+
+.trust__item + .trust__item {
+  @media (width >= 1024px) {
+    border-inline-start: 1px solid var(--color-border);
+  }
+}
+
+.trust__icon {
+  color: var(--color-text-soft);
+}
+
+.trust__text {
+  font-size: var(--fs-small);
+  text-wrap: balance;
+}

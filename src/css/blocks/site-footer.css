@@ -1,0 +1,28 @@
+.site-footer {
+  padding-block: var(--space-6);
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4) var(--space-6);
+}
+
+.site-footer__text {
+  flex: 1 1 20rem;
+  color: var(--color-text-muted);
+}
+
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+}
+
+.site-footer__link {
+  font-size: var(--fs-small);
+}

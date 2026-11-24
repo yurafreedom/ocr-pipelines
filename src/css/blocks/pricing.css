@@ -1,0 +1,47 @@
+.pricing__tiers {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-7);
+
+  @media (width >= 768px) {
+    flex-direction: row;
+  }
+}
+
+.pricing__tier {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-panel);
+  background-color: var(--color-surface);
+}
+
+.pricing__tier-title {
+  font-size: 1.375rem;
+}
+
+.pricing__price {
+  margin-top: var(--space-2);
+  color: var(--color-text);
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  font-weight: 620;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.pricing__time {
+  color: var(--color-text-soft);
+  font-size: var(--fs-small);
+  font-variant-numeric: tabular-nums;
+}
+
+.pricing__text {
+  margin-top: var(--space-2);
+  font-size: 1rem;
+}

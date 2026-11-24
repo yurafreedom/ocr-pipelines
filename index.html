@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Yura Sachenko — Document automation</title>
+    <meta name="description" content="Invoices, delivery notes, quotes and tenders become verified data in the warehouse or accounting system you already use. Independent document automation by Yura Sachenko.">
+    <link rel="canonical" href="{{ SITE_URL }}">
+    <meta name="theme-color" content="#111416">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="/fonts/inter-tight-var.woff2" as="font" type="font/woff2" crossorigin>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ SITE_URL }}">
+    <meta property="og:title" content="Yura Sachenko — Document automation">
+    <meta property="og:description" content="Invoices, delivery notes, quotes and tenders become verified data in the warehouse or accounting system you already use.">
+    <!-- TODO: og:image and Twitter card — no share image exists yet -->
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <!-- icon-sprite -->
+
+    <header class="site-header">
+      <div class="site-header__inner container">
+        <a class="site-header__identity" href="#main">
+          <span class="site-header__name">Yura Sachenko</span>
+          <span class="site-header__tagline">Document automation</span>
+        </a>
+        <nav class="site-header__nav" aria-label="Main">
+          <a class="site-header__nav-link" href="#how-it-works">How it works</a>
+          <!-- if:demo --><a class="site-header__nav-link" href="#demo">Demo</a><!-- /if:demo -->
+          <a class="site-header__nav-link" href="#pricing">Pricing</a>
+          <a class="site-header__nav-link" href="#faq">FAQ</a>
+        </nav>
+        <a class="site-header__cta btn btn--primary btn--sm" href="{{ CALENDLY_URL }}" target="_blank" rel="noopener">Book a 30-min audit</a>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__inner container">
+          <div class="hero__content">
+            <h1 class="hero__title" id="hero-title"><span class="hero__line">Your team retypes documents.</span> <span class="hero__line">I build the system that stops it.</span></h1>
+            <p class="hero__lead">Invoices, delivery notes, quotes and tenders — scans and phone photos included — become verified data in the warehouse or accounting system you already use. A person confirms anything the machine isn’t sure about. Nothing enters your records unchecked.</p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="{{ CALENDLY_URL }}" target="_blank" rel="noopener">Book a free 30-minute workflow audit</a>
+              <p class="hero__note">You leave with a written scope and a first-version plan — not a pitch.</p>
+              <!-- if:demo --><a class="text-link" href="#demo">Try the live demo ↓</a><!-- /if:demo -->
+              <!-- if:no-demo --><a class="text-link" href="#how-it-works">See how it works ↓</a><!-- /if:no-demo -->
+            </div>
+          </div>
+
+          <div class="hero__visual">
+            <figure class="doc-flow">
+              <figcaption class="visually-hidden">A delivery note becomes extracted fields; the uncertain quantity waits for a person to confirm it before it reaches your warehouse or accounting system.</figcaption>
+              <div class="paper paper--delivery">
+                <div class="paper__head">
+                  <span class="paper__title">DELIVERY NOTE</span>
+                  <span class="paper__number">DN-1048</span>
+                </div>
+                <p class="paper__note">Supplier: <b>Example Supply Co.</b></p>
+                <table class="paper__table">
+                  <caption class="visually-hidden">Delivery note DN-1048 lines</caption>
+                  <thead><tr><th class="paper__th" scope="col">Description</th><th class="paper__th" scope="col">Qty</th><th class="paper__th" scope="col">Unit</th></tr></thead>
+                  <tbody>
+                    <tr><td class="paper__td">Steel bracket A</td><td class="paper__td">10</td><td class="paper__td">pcs</td></tr>
+                    <tr><td class="paper__td">Cable gland M20</td><td class="paper__td">5</td><td class="paper__td">pcs</td></tr>
+                    <tr><td class="paper__td">Junction box IP65</td><td class="paper__td"><span class="paper__hand">18?</span></td><td class="paper__td">pcs</td></tr>
+                  </tbody>
+                </table>
+                <p class="paper__note">Goods received in good condition.</p>
+              </div>
+              <div class="doc-flow__line"></div>
+              <dl class="doc-flow__fields">
+                <div class="doc-flow__row">
+                  <dt class="doc-flow__label">Delivery note</dt>
+                  <dd class="doc-flow__value">DN-1048</dd>
+                  <dd class="doc-flow__status"><span class="status status--ok"><svg class="icon icon--sm status__icon" aria-hidden="true"><use href="#i-check"/></svg>verified</span></dd>
+                </div>
+                <div class="doc-flow__row">
+                  <dt class="doc-flow__label">Supplier</dt>
+                  <dd class="doc-flow__value">Example Supply Co.</dd>
+                  <dd class="doc-flow__status"><span class="status status--ok"><svg class="icon icon--sm status__icon" aria-hidden="true"><use href="#i-check"/></svg>verified</span></dd>
+                </div>
+                <div class="doc-flow__row">
+                  <dt class="doc-flow__label">Received quantity</dt>
+                  <dd class="doc-flow__value doc-flow__value--review">18?</dd>
+                  <dd class="doc-flow__status"><span class="status status--review"><svg class="icon icon--sm status__icon" aria-hidden="true"><use href="#i-circle-alert"/></svg>needs review</span></dd>
+                </div>
+              </dl>
+              <svg class="icon doc-flow__arrow" aria-hidden="true"><use href="#i-arrow-down"/></svg>
+              <p class="doc-flow__gate"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-user-round"/></svg>Awaiting confirmation</p>
+              <p class="doc-flow__after">After confirmation <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-down"/></svg></p>
+              <p class="doc-flow__destination"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-server"/></svg>your warehouse or accounting system</p>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust" aria-labelledby="trust-title">
+        <div class="container">
+          <h2 class="visually-hidden" id="trust-title">At a glance</h2>
+          <ul class="trust__list">
+          <li class="trust__item">
+            <svg class="icon icon--lg trust__icon" aria-hidden="true"><use href="#i-scan-text"/></svg>
+            <p class="trust__text">Open-source OCR (PaddleOCR, Tesseract) — no per-page fees to a cloud vendor</p>
+          </li>
+          <li class="trust__item">
+            <svg class="icon icon--lg trust__icon" aria-hidden="true"><use href="#i-camera"/></svg>
+            <p class="trust__text">Scans, phone photos and handwriting — not only clean PDFs</p>
+          </li>
+          <li class="trust__item">
+            <svg class="icon icon--lg trust__icon" aria-hidden="true"><use href="#i-git-branch"/></svg>
+            <p class="trust__text">Code and data in your accounts from the first commit</p>
+          </li>
+          <li class="trust__item">
+            <svg class="icon icon--lg trust__icon" aria-hidden="true"><use href="#i-user-round"/></svg>
+            <p class="trust__text">One engineer end to end — no agency margin, no account manager</p>
+          </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section segments" id="segments" aria-labelledby="segments-title" data-js="segments">
+        <div class="container">
+        <div class="section-head">
+          <h2 class="section-head__title" id="segments-title">Is this you?</h2>
+        </div>
+          <div class="segments__tabs" role="tablist" aria-label="Segments" data-js="segment-tablist">
+            <button class="segments__tab" type="button" role="tab" id="segment-tab-warehouse" aria-controls="segment-warehouse" aria-selected="true" data-js="segment-tab">Warehouse</button>
+            <button class="segments__tab" type="button" role="tab" id="segment-tab-construction" aria-controls="segment-construction" aria-selected="false" tabindex="-1" data-js="segment-tab">Construction</button>
+            <button class="segments__tab" type="button" role="tab" id="segment-tab-finance" aria-controls="segment-finance" aria-selected="false" tabindex="-1" data-js="segment-tab">Finance</button>
+          </div>
+          <div class="segments__list">
+          <article class="segment segment--warehouse" id="segment-warehouse" aria-labelledby="segment-warehouse-title" data-js="segment-panel">
+            <div class="segment__head">
+              <svg class="icon icon--lg segment__icon" aria-hidden="true"><use href="#i-warehouse"/></svg>
+              <h3 class="segment__title" id="segment-warehouse-title">Warehouse &amp; logistics</h3>
+              <p class="segment__tag">3PL · distribution · wholesale</p>
+            </div>
+            <div class="segment__body">
+              <p class="segment__picture"><span class="segment__label">Typical picture</span><span class="segment__num">2</span> administrators spend <span class="segment__num">5–8 hours a day</span> retyping supplier paperwork and checking it against what was ordered.</p>
+              <h4 class="segment__costs-title">What it costs you</h4>
+              <ul class="segment__costs">
+              <li class="segment__cost">A typo in a quantity becomes a stock discrepancy — found at the next count, written off, argued about.</li>
+              <li class="segment__cost">A short shipment noticed a week later is past the supplier’s claim window (often <span class="segment__num">5 working days</span>). The money is gone.</li>
+              <li class="segment__cost">Delivery notes sit in folders nobody can search, so when a client disputes a delivery six months later you can’t prove what arrived.</li>
+              </ul>
+              <p class="segment__build"><span class="segment__label">What I build</span>Delivery notes photographed at the dock → matched line by line against your purchase order → quantity and SKU gaps flagged the same day → one-click review → written to your warehouse system. The photo and the note are kept as claim evidence, searchable by PO, supplier and SKU.</p>
+              <p class="segment__change"><span class="segment__label">What changes</span>Paperwork becomes a short review pass instead of a day of typing. Short shipments are claimed while the window is still open. Every delivery is provable.</p>
+              <div class="segment__links">
+              <!-- if:demo --><a class="segment__link text-link" href="#demo">Try it on a delivery note <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></a><!-- /if:demo -->
+              <a class="segment__link text-link" href="#pricing" data-calc-system="delivery">Estimate this system <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+              </div>
+            </div>
+          </article>
+          <article class="segment segment--construction" id="segment-construction" aria-labelledby="segment-construction-title" data-js="segment-panel">
+            <div class="segment__head">
+              <svg class="icon icon--lg segment__icon" aria-hidden="true"><use href="#i-hard-hat"/></svg>
+              <h3 class="segment__title" id="segment-construction-title">Construction &amp; trades</h3>
+              <p class="segment__tag">contractors · estimators · quantity surveyors</p>
+            </div>
+            <div class="segment__body">
+              <p class="segment__picture"><span class="segment__label">Typical picture</span>Estimators rebuild rates from past quotes by hand, and the clause you need lives on page <span class="segment__num">34</span> of a <span class="segment__num">40</span>-page subcontract.</p>
+              <h4 class="segment__costs-title">What it costs you</h4>
+              <ul class="segment__costs">
+              <li class="segment__cost">Quotes and BOQs (bills of quantities) are tables. Push them through a plain text extractor and the numbers separate from their line items — ask what you paid for concrete on a job and you get a confident wrong answer.</li>
+              <li class="segment__cost">A wrong rate on one line is a mispriced bid: you lose the margin on the whole job, not on the line.</li>
+              <li class="segment__cost">“Source: subcontract agreement” isn’t an answer when a delivery dispute needs the notice clause today.</li>
+              </ul>
+              <p class="segment__build"><span class="segment__label">What I build</span>Structured quote and BOQ extraction that keeps item, quantity, unit, rate and total on the same row; pricing history across past quotes; every answer linked to the exact page and passage it came from.</p>
+              <p class="segment__change"><span class="segment__label">What changes</span>Rates from past quotes in minutes, each one traceable to its page. Contract questions answered with the clause, not the filename.</p>
+              <div class="segment__links">
+              <a class="segment__link text-link" href="#tables">See the table example <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+              <a class="segment__link text-link" href="#pricing" data-calc-system="boq">Estimate this system <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+              </div>
+            </div>
+          </article>
+          <article class="segment segment--finance" id="segment-finance" aria-labelledby="segment-finance-title" data-js="segment-panel">
+            <div class="segment__head">
+              <svg class="icon icon--lg segment__icon" aria-hidden="true"><use href="#i-receipt"/></svg>
+              <h3 class="segment__title" id="segment-finance-title">Finance &amp; back office</h3>
+              <p class="segment__tag">bookkeepers · finance teams · accounting practices</p>
+            </div>
+            <div class="segment__body">
+              <p class="segment__picture"><span class="segment__label">Typical picture</span>Supplier bills, invoices and statements typed into Xero, QuickBooks or Sage by hand. Month-end spent reconciling instead of closing.</p>
+              <h4 class="segment__costs-title">What it costs you</h4>
+              <ul class="segment__costs">
+              <li class="segment__cost">A duplicate invoice paid twice is discovered by the supplier’s silence, not by your system.</li>
+              <li class="segment__cost">A total that doesn’t match its lines is caught at reconciliation, weeks after posting.</li>
+              <li class="segment__cost">Manual entry scales with volume, so growth means another hire.</li>
+              </ul>
+              <p class="segment__build"><span class="segment__label">What I build</span>Invoice capture with arithmetic and duplicate checks, a review queue for anything uncertain, and a reviewed export into your accounting system. Nothing posts unchecked.</p>
+              <p class="segment__change"><span class="segment__label">What changes</span>Entry becomes a review pass. Duplicates and mismatched totals stop before posting. Month-end closes on time.</p>
+              <div class="segment__links">
+              <a class="segment__link text-link" href="#review">See the checks <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+              <a class="segment__link text-link" href="#pricing" data-calc-system="finance">Estimate this system <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+              </div>
+            </div>
+          </article>
+          </div>
+          <div class="segments__note">
+            <p class="segments__note-text">Off-the-shelf capture tools handle clean, single-page invoices well. These three workflows break them in the same three places — tables, evidence, and matching against your own orders. That is the part I build.</p>
+            <a class="text-link" href="#faq-alternatives">Why not Docparser or Hubdoc? <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          </div>
+        </div>
+      </section>
+
+<!-- if:demo -->
+      <section class="section demo" id="demo" aria-labelledby="demo-title" data-js="demo">
+        <div class="container">
+        <div class="section-head">
+          <p class="section-head__eyebrow eyebrow">Live demo</p>
+          <h2 class="section-head__title" id="demo-title">Upload a document. Watch it become checked data.</h2>
+          <p class="section-head__lead">Drop an invoice, delivery note or quote — PDF, scan or phone photo — and see the extracted fields, the source crop behind each one, and which values the system refuses to pass without a human.</p>
+        </div>
+          <div class="demo__stage" data-js="demo-stage">
+            <div class="demo__fallback" data-js="demo-fallback">
+              <p class="demo__fallback-text">Live upload demo is in preparation. The examples below run on fixed sample documents.</p>
+              <div class="demo__samples">
+                <a class="btn btn--outline demo__sample" href="#main">Sample delivery note</a>
+                <a class="btn btn--outline demo__sample" href="#tables">Sample construction quote</a>
+                <a class="btn btn--outline demo__sample" href="#review">Sample invoice</a>
+              </div>
+            </div>
+          </div>
+          <ul class="demo__captions">
+            <li class="demo__caption"><svg class="icon icon--sm demo__caption-icon" aria-hidden="true"><use href="#i-check"/></svg>Rows stay rows: quantity, rate and total travel with their item.</li>
+            <li class="demo__caption"><svg class="icon icon--sm demo__caption-icon" aria-hidden="true"><use href="#i-check"/></svg>Every value shows the exact crop it came from.</li>
+            <li class="demo__caption"><svg class="icon icon--sm demo__caption-icon" aria-hidden="true"><use href="#i-check"/></svg>Anything uncertain is held for review; export stays blocked until a person confirms it.</li>
+          </ul>
+          <p class="demo__privacy" data-js="demo-privacy" hidden>Files are processed in memory and deleted within 15 minutes. Nothing is stored or used for training. Demo limit: 10 MB, first 3 pages.</p>
+        </div>
+      </section>
+      <!-- /if:demo -->
+
+      <div id="how-it-works">
+        <section class="section" id="tables" aria-labelledby="tables-title">
+          <div class="container">
+          <div class="section-head">
+          <p class="section-head__eyebrow eyebrow">Where generic tools fail / 01</p>
+          <h2 class="section-head__title" id="tables-title">A number on the wrong line is a mispriced bid.</h2>
+          <p class="section-head__lead">Quotes, BOQs and delivery notes are tables. Plain-text extraction separates quantities from their line items; here rows stay rows, so item, quantity, unit, rate and total travel together.</p>
+        </div>
+            <div class="compare">
+              <div class="compare__document paper paper--quote">
+                <div class="paper__head">
+                  <span class="paper__title">CONSTRUCTION QUOTE</span>
+                  <span class="paper__number">Q-0173</span>
+                </div>
+                <p class="paper__note">Example document</p>
+                <div class="paper__meta">
+                  <p class="paper__meta-item">Project: Riverside works<br>Materials estimate</p>
+                  <p class="paper__meta-item">14 March 2026<br>Valid for 30 days</p>
+                </div>
+                <div class="paper__scroll">
+                <table class="paper__table">
+                  <caption class="visually-hidden">Quote Q-0173 line items</caption>
+                  <thead><tr><th class="paper__th" scope="col">Item</th><th class="paper__th" scope="col">Qty</th><th class="paper__th" scope="col">Unit</th><th class="paper__th" scope="col">Rate</th><th class="paper__th" scope="col">Total</th></tr></thead>
+                  <tbody><tr><td class="paper__td">Concrete C30</td><td class="paper__td">12</td><td class="paper__td">m³</td><td class="paper__td">£145.00</td><td class="paper__td">£1,740.00</td></tr><tr><td class="paper__td">Rebar</td><td class="paper__td">800</td><td class="paper__td">kg</td><td class="paper__td">£0.95</td><td class="paper__td">£760.00</td></tr><tr><td class="paper__td">Formwork</td><td class="paper__td">40</td><td class="paper__td">m²</td><td class="paper__td">£28.00</td><td class="paper__td">£1,120.00</td></tr></tbody>
+                </table>
+                </div>
+                <p class="paper__total">Total <strong class="paper__total-value">£3,620.00</strong></p>
+              </div>
+              <div class="compare__results">
+                <div class="panel">
+                  <div class="panel__head">
+                    <h3 class="panel__title">Plain-text extraction</h3>
+                    <span class="status status--review"><svg class="icon icon--sm status__icon" aria-hidden="true"><use href="#i-circle-alert"/></svg>Row relationships lost</span>
+                  </div>
+                  <div class="compare__broken">
+                    <p class="compare__broken-line">Concrete C30 / Rebar / Formwork</p>
+                    <p class="compare__broken-line">12 &nbsp; 800 &nbsp; 40</p>
+                    <p class="compare__broken-line">£145.00 &nbsp; £0.95 &nbsp; £28.00</p>
+                    <p class="compare__broken-line">£1,740.00 &nbsp; £760.00 &nbsp; £1,120.00</p>
+                  </div>
+                </div>
+                <div class="panel">
+                  <div class="panel__head">
+                    <h3 class="panel__title">Structured rows</h3>
+                    <span class="status status--ok"><svg class="icon icon--sm status__icon" aria-hidden="true"><use href="#i-check"/></svg>Relationships preserved</span>
+                  </div>
+                  <div class="compare__scroll">
+                  <table class="compare__table">
+                  <caption class="visually-hidden">Structured rows extracted from quote Q-0173</caption>
+                  <thead><tr><th class="compare__th" scope="col">Item</th><th class="compare__th" scope="col">Qty</th><th class="compare__th" scope="col">Unit</th><th class="compare__th" scope="col">Rate</th><th class="compare__th" scope="col">Total</th></tr></thead>
+                  <tbody><tr><td class="compare__td">Concrete C30</td><td class="compare__td">12</td><td class="compare__td">m³</td><td class="compare__td">£145.00</td><td class="compare__td">£1,740.00</td></tr><tr><td class="compare__td">Rebar</td><td class="compare__td">800</td><td class="compare__td">kg</td><td class="compare__td">£0.95</td><td class="compare__td">£760.00</td></tr><tr><td class="compare__td">Formwork</td><td class="compare__td">40</td><td class="compare__td">m²</td><td class="compare__td">£28.00</td><td class="compare__td">£1,120.00</td></tr></tbody>
+                </table>
+                  </div>
+                </div>
+                <p class="compare__caption">Item, quantity, unit, rate and total travel together.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="citations" aria-labelledby="citations-title">
+          <div class="container">
+          <div class="section-head">
+          <p class="section-head__eyebrow eyebrow">Where generic tools fail / 02</p>
+          <h2 class="section-head__title" id="citations-title">When a client disputes a delivery, find the clause — not the file.</h2>
+          <p class="section-head__lead">Every answer opens the exact page and passage behind it. ‘Source: subcontract agreement’ is a filename; page 34, §7.2 is evidence.</p>
+        </div>
+            <div class="citation">
+              <div class="citation__answer panel">
+                <p class="citation__label">Question</p>
+                <h3 class="citation__question">How long do we have to report a delivery discrepancy?</h3>
+                <hr class="citation__rule">
+                <p class="citation__label">Answer</p>
+                <p class="citation__result">Within 5 working days of delivery.</p>
+                <p class="citation__text">The subcontract requires written notice to the supplier.</p>
+                <a class="citation__link text-link" href="#clause"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-file-text"/></svg>Subcontract · p. 34 · §7.2</a>
+              </div>
+              <div class="citation__viewer">
+                <div class="citation__viewer-head">
+                  <span class="citation__viewer-title">Example subcontract</span>
+                  <span class="citation__page">34 / 40</span>
+                </div>
+                <div class="paper paper--contract">
+                  <p class="paper__note">SUBCONTRACT AGREEMENT</p>
+                  <hr class="paper__rule">
+                  <p class="paper__section">7. Supply and delivery</p>
+                  <p class="paper__clause-title">7.1 Delivery schedule</p>
+                  <p class="paper__text">The supplier will deliver the goods in accordance with the delivery schedule set out in Appendix B.</p>
+                  <p class="paper__clause-title">7.2 Delivery discrepancies</p>
+                  <p class="paper__clause" id="clause" tabindex="-1">The contractor must notify the supplier in writing of any delivery discrepancy within 5 working days of delivery.</p>
+                  <p class="paper__text">The notice must include a description of the discrepancy and relevant delivery references.</p>
+                  <p class="paper__note">Illustrative document · Page 34</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="review" aria-labelledby="review-title">
+          <div class="container">
+          <div class="section-head">
+          <p class="section-head__eyebrow eyebrow">Where generic tools fail / 03</p>
+          <h2 class="section-head__title" id="review-title">Nothing lands in your system unchecked.</h2>
+        </div>
+            <div class="review">
+              <div class="review__text">
+                <p class="review__paragraph">Confidence isn’t one number from a model. A field is held for review if the page went through OCR rather than a text layer, if the value fails its own business rule (an invoice total that doesn’t match its lines), or if two extraction paths disagree.</p>
+                <p class="review__paragraph">The reviewer sees the cropped source next to the value — one keystroke to accept or correct. Corrections are kept, so thresholds are tuned against real error rates rather than guesses.</p>
+              </div>
+              <div class="review-card" data-js="review-card">
+                <div class="review-card__head">
+                  <h3 class="review-card__title">Review field</h3>
+                  <span class="review-card__status status status--review" data-js="review-status"><svg class="icon icon--sm status__icon" aria-hidden="true"><use href="#i-circle-alert"/></svg><span data-js="review-status-text">Needs review</span></span>
+                </div>
+                <div class="review-card__columns">
+                  <div class="review-card__source">
+                    <p class="review-card__label">Source crop</p>
+                    <dl class="paper paper--invoice">
+                      <div class="paper__line"><dt>Subtotal</dt><dd>£1,200.00</dd></div>
+                      <div class="paper__line"><dt>VAT</dt><dd>£240.00</dd></div>
+                      <div class="paper__line paper__line--total"><dt>Total</dt><dd>£1,440.00</dd></div>
+                    </dl>
+                  </div>
+                  <div class="review-card__field">
+                    <label class="review-card__label" for="invoice-total">Extracted value · Invoice total</label>
+                    <input class="review-card__input" id="invoice-total" type="text" inputmode="decimal" value="1,490.00" autocomplete="off" data-js="review-input">
+                    <div class="review-card__reason">
+                      <svg class="icon review-card__reason-icon" aria-hidden="true"><use href="#i-circle-alert"/></svg>
+                      <div>
+                        <p class="review-card__reason-title" data-js="review-reason">Total does not match line items.</p>
+                        <p class="review-card__reason-text">Expected total: £1,440.00</p>
+                      </div>
+                    </div>
+                    <dl class="review-card__checks">
+                      <div class="review-card__check"><dt class="review-card__check-label">Text source</dt><dd class="review-card__check-value">OCR</dd></div>
+                      <div class="review-card__check"><dt class="review-card__check-label">Arithmetic check</dt><dd class="review-card__check-value" data-js="review-arithmetic">failed</dd></div>
+                      <div class="review-card__check"><dt class="review-card__check-label">Extraction paths</dt><dd class="review-card__check-value" data-js="review-paths">disagree</dd></div>
+                    </dl>
+                  </div>
+                </div>
+                <div class="review-card__actions">
+                  <button class="review-card__action btn btn--outline" type="button" data-js="review-reset"><svg class="icon icon--sm btn__icon" aria-hidden="true"><use href="#i-rotate-ccw"/></svg>Reset example</button>
+                  <button class="review-card__action btn btn--primary" type="button" data-js="review-confirm">Confirm correction</button>
+                </div>
+                <p class="review-card__footer" role="status" data-js="review-message">Awaiting confirmation · Export blocked</p>
+                <p class="review-card__micro">Interactive example · fictional invoice</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section class="section process" id="process" aria-labelledby="process-title">
+        <div class="container">
+        <div class="section-head">
+          <h2 class="section-head__title" id="process-title">How I work</h2>
+          <p class="section-head__lead">You work with me, not with an account manager. Nothing is subcontracted.</p>
+        </div>
+          <ol class="process__steps">
+          <li class="process__step">
+            <article class="process__card" aria-labelledby="step-audit-title">
+              <div class="process__card-head">
+                <span class="process__num">01</span>
+                <svg class="icon icon--lg process__step-icon" aria-hidden="true"><use href="#i-phone-call"/></svg>
+              </div>
+              <h3 class="process__step-title" id="step-audit-title">Workflow audit</h3>
+              <p class="process__duration">{{ PROCESS.audit }}</p>
+              <p class="process__text">You show me what arrives, what people do with it and where the result has to go. I tell you what is automatable and what isn’t.</p>
+            </article>
+          </li>
+          <li class="process__step">
+            <article class="process__card" aria-labelledby="step-scope-title">
+              <div class="process__card-head">
+                <span class="process__num">02</span>
+                <svg class="icon icon--lg process__step-icon" aria-hidden="true"><use href="#i-file-text"/></svg>
+              </div>
+              <h3 class="process__step-title" id="step-scope-title">Written scope</h3>
+              <p class="process__duration">{{ PROCESS.scope }}</p>
+              <p class="process__text">Document families, business rules, risky assumptions, the smallest first version worth building, and a fixed price for it.</p>
+            </article>
+          </li>
+          <li class="process__step">
+            <article class="process__card" aria-labelledby="step-mvp-title">
+              <div class="process__card-head">
+                <span class="process__num">03</span>
+                <svg class="icon icon--lg process__step-icon" aria-hidden="true"><use href="#i-flask-conical"/></svg>
+              </div>
+              <h3 class="process__step-title" id="step-mvp-title">Focused MVP</h3>
+              <p class="process__duration">{{ PROCESS.mvp }}</p>
+              <p class="process__text">Built and accepted on 100–200 of your real documents. You keep the code whatever you decide next.</p>
+            </article>
+          </li>
+          <li class="process__step">
+            <article class="process__card" aria-labelledby="step-production-title">
+              <div class="process__card-head">
+                <span class="process__num">04</span>
+                <svg class="icon icon--lg process__step-icon" aria-hidden="true"><use href="#i-rocket"/></svg>
+              </div>
+              <h3 class="process__step-title" id="step-production-title">Production build</h3>
+              <p class="process__duration">{{ PROCESS.production }}</p>
+              <p class="process__text">More document families, integrations, roles, monitoring, and a handover with deployment docs and a test checklist.</p>
+            </article>
+          </li>
+          </ol>
+          <ul class="process__principles">
+          <li class="process__principle">
+            <h3 class="process__principle-title">Ownership</h3>
+            <p class="process__principle-text">Your code lives in your repository from the first commit; the database, workflows and IP are yours.</p>
+          </li>
+          <li class="process__principle">
+            <h3 class="process__principle-title">Visible costs</h3>
+            <p class="process__principle-text">Model and hosting costs run on your accounts, so you see them and can cap them.</p>
+          </li>
+          <li class="process__principle">
+            <h3 class="process__principle-title">Confidentiality</h3>
+            <p class="process__principle-text">I sign your NDA, or mine if you’d rather.</p>
+          </li>
+          <li class="process__principle">
+            <h3 class="process__principle-title">Handover</h3>
+            <p class="process__principle-text">No licence fees, no per-document charge, no lock-in to me. A system you can’t run without me isn’t finished.</p>
+          </li>
+          <li class="process__principle">
+            <h3 class="process__principle-title">Support, if you want it</h3>
+            <p class="process__principle-text">After handover you can run it yourself. If you’d rather not, a monthly retainer covers monitoring, supplier layout changes and small extensions — optional and cancellable.</p>
+          </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section pricing" id="pricing" aria-labelledby="pricing-title">
+        <div class="container">
+        <div class="section-head">
+          <p class="section-head__eyebrow eyebrow">Pricing</p>
+          <h2 class="section-head__title" id="pricing-title">What would this system cost — and return?</h2>
+          <p class="section-head__lead">Three build sizes, one engineer, fixed prices per stage. Move the sliders to your volumes for a planning range; the audit replaces the assumptions with your real documents.</p>
+        </div>
+          <ul class="pricing__tiers">
+          <li class="pricing__tier">
+            <h3 class="pricing__tier-title">{{ PRICING_TIERS.mvp.title }}</h3>
+            <p class="pricing__price" data-js="tier-price-mvp">{{ TIER_PRICE.mvp }}</p>
+            <p class="pricing__time">{{ PRICING_TIERS.mvp.time }}</p>
+            <p class="pricing__text">One document family, core fields, review screen, clean export. Accepted on your real documents.</p>
+          </li>
+          <li class="pricing__tier">
+            <h3 class="pricing__tier-title">{{ PRICING_TIERS.workflow.title }}</h3>
+            <p class="pricing__price" data-js="tier-price-workflow">{{ TIER_PRICE.workflow }}</p>
+            <p class="pricing__time">{{ PRICING_TIERS.workflow.time }}</p>
+            <p class="pricing__text">Several document families, business rules, matching against your orders or ledger, one integration (WMS, Xero, QuickBooks, Sage).</p>
+          </li>
+          <li class="pricing__tier">
+            <h3 class="pricing__tier-title">{{ PRICING_TIERS.full.title }}</h3>
+            <p class="pricing__price" data-js="tier-price-full">{{ TIER_PRICE.full }}</p>
+            <p class="pricing__time">{{ PRICING_TIERS.full.time }}</p>
+            <p class="pricing__text">Multiple teams, integrations, roles, monitoring, audit trail, handover.</p>
+          </li>
+          </ul>
+
+          <div class="calculator" data-js="calculator">
+            <div class="calculator__controls" data-js="calc-controls">
+              <div class="calculator__row">
+                <div class="calculator__field calculator__field--wide">
+                  <label class="calculator__label" for="calc-system">System to estimate</label>
+                  <select class="calculator__select" id="calc-system" name="system" data-js="calc-system">
+                  <option value="capture" selected>Document capture &amp; review</option>
+                  <option value="delivery">Delivery-note &amp; order matching</option>
+                  <option value="boq">Quote &amp; BOQ intelligence</option>
+                  <option value="finance">Invoice &amp; finance automation</option>
+                  <option value="search">Document search with evidence</option>
+                  <option value="operations">End-to-end document operations</option>
+                  </select>
+                </div>
+                <div class="calculator__field">
+                  <label class="calculator__label" for="calc-currency">Currency</label>
+                  <select class="calculator__select" id="calc-currency" name="currency" data-js="calc-currency">
+                    <option value="GBP" selected>GBP — £</option>
+                    <option value="USD">USD — $</option>
+                    <option value="EUR">EUR — €</option>
+                  </select>
+                </div>
+              </div>
+              <fieldset class="calculator__tiers">
+                <legend class="calculator__label">How far should the first build go?</legend>
+                <div class="calculator__tier-list">
+                  <button class="calculator__tier" type="button" aria-pressed="false" data-js="calc-tier" data-value="mvp">Focused MVP</button>
+                  <button class="calculator__tier is-active" type="button" aria-pressed="true" data-js="calc-tier" data-value="workflow">Working workflow</button>
+                  <button class="calculator__tier" type="button" aria-pressed="false" data-js="calc-tier" data-value="full">Full production system</button>
+                </div>
+              </fieldset>
+              <div class="calculator__ranges">
+              <div class="calculator__range">
+                <div class="calculator__range-head">
+                  <label class="calculator__label" for="calc-documents">Documents each month</label>
+                  <span class="calculator__range-value" data-js="calc-documents-value">{{ CALC_LABEL.documents }}</span>
+                </div>
+                <input class="calculator__slider" id="calc-documents" name="documents" type="range" min="100" max="20000" step="100" value="{{ CALC_INPUT.documents }}" data-js="calc-documents">
+              </div>
+              <div class="calculator__range">
+                <div class="calculator__range-head">
+                  <label class="calculator__label" for="calc-minutes">Minutes spent per document</label>
+                  <span class="calculator__range-value" data-js="calc-minutes-value">{{ CALC_LABEL.minutes }}</span>
+                </div>
+                <input class="calculator__slider" id="calc-minutes" name="minutes" type="range" min="2" max="30" step="1" value="{{ CALC_INPUT.minutes }}" data-js="calc-minutes">
+              </div>
+              <div class="calculator__range">
+                <div class="calculator__range-head">
+                  <label class="calculator__label" for="calc-hourly">Loaded hourly staff cost</label>
+                  <span class="calculator__range-value" data-js="calc-hourly-value">{{ CALC_LABEL.hourly }}</span>
+                </div>
+                <input class="calculator__slider" id="calc-hourly" name="hourly" type="range" min="{{ RANGE.hourly.min }}" max="{{ RANGE.hourly.max }}" step="{{ RANGE.hourly.step }}" value="{{ CALC_INPUT.hourly }}" data-js="calc-hourly">
+              </div>
+              <div class="calculator__range">
+                <div class="calculator__range-head">
+                  <label class="calculator__label" for="calc-errors">Error / delay cost each month</label>
+                  <span class="calculator__range-value" data-js="calc-errors-value">{{ CALC_LABEL.errors }}</span>
+                </div>
+                <input class="calculator__slider" id="calc-errors" name="errors" type="range" min="{{ RANGE.errors.min }}" max="{{ RANGE.errors.max }}" step="{{ RANGE.errors.step }}" value="{{ CALC_INPUT.errors }}" data-js="calc-errors">
+              </div>
+              <div class="calculator__range">
+                <div class="calculator__range-head">
+                  <label class="calculator__label" for="calc-types">Document types</label>
+                  <span class="calculator__range-value" data-js="calc-types-value">{{ CALC_LABEL.types }}</span>
+                </div>
+                <input class="calculator__slider" id="calc-types" name="types" type="range" min="1" max="12" step="1" value="{{ CALC_INPUT.types }}" data-js="calc-types">
+              </div>
+              <div class="calculator__range">
+                <div class="calculator__range-head">
+                  <label class="calculator__label" for="calc-integrations">Systems to connect</label>
+                  <span class="calculator__range-value" data-js="calc-integrations-value">{{ CALC_LABEL.integrations }}</span>
+                </div>
+                <input class="calculator__slider" id="calc-integrations" name="integrations" type="range" min="0" max="6" step="1" value="{{ CALC_INPUT.integrations }}" data-js="calc-integrations">
+              </div>
+              </div>
+              <div class="calculator__row">
+              <div class="calculator__field">
+                <label class="calculator__label" for="calc-source">Document quality</label>
+                <select class="calculator__select" id="calc-source" name="source" data-js="calc-source"><option value="digital">Mostly text PDFs</option><option value="mixed" selected>PDFs, scans and photos</option><option value="handwriting">Messy photos / handwriting</option></select>
+              </div>
+              <div class="calculator__field">
+                <label class="calculator__label" for="calc-deployment">Deployment</label>
+                <select class="calculator__select" id="calc-deployment" name="deployment" data-js="calc-deployment"><option value="cloud" selected>Cloud / your accounts</option><option value="private">Private server / local</option></select>
+              </div>
+              <div class="calculator__field">
+                <label class="calculator__label" for="calc-criticality">Business criticality</label>
+                <select class="calculator__select" id="calc-criticality" name="criticality" data-js="calc-criticality"><option value="low">Assistive</option><option value="standard" selected>Operational</option><option value="high">Financial / compliance</option></select>
+              </div>
+              </div>
+            </div>
+
+            <!-- Static values below are computed at build time from CONFIG.CALC_DEFAULTS by estimate.js -->
+            <div class="calculator__results" id="calc-results" aria-live="polite" data-js="calc-results">
+              <p class="calculator__eyebrow eyebrow">Your directional estimate</p>
+              <p class="calculator__price"><output data-js="calc-price">{{ CALC.price }}</output></p>
+              <p class="calculator__caption">Estimated one-off build range</p>
+              <dl class="calculator__metrics">
+                <div class="calculator__metric">
+                  <dt class="calculator__metric-label"><svg class="icon icon--sm calculator__metric-icon" aria-hidden="true"><use href="#i-clock-3"/></svg>Time returned</dt>
+                  <dd class="calculator__metric-value"><output data-js="calc-hours">{{ CALC.hours }}</output></dd>
+                </div>
+                <div class="calculator__metric">
+                  <dt class="calculator__metric-label"><svg class="icon icon--sm calculator__metric-icon" aria-hidden="true"><use href="#i-coins"/></svg>Net monthly benefit</dt>
+                  <dd class="calculator__metric-value"><output data-js="calc-monthly">{{ CALC.monthly }}</output></dd>
+                </div>
+                <div class="calculator__metric">
+                  <dt class="calculator__metric-label"><svg class="icon icon--sm calculator__metric-icon" aria-hidden="true"><use href="#i-trending-up"/></svg>Net annual benefit</dt>
+                  <dd class="calculator__metric-value"><output data-js="calc-annual">{{ CALC.annual }}</output></dd>
+                </div>
+                <div class="calculator__metric">
+                  <dt class="calculator__metric-label"><svg class="icon icon--sm calculator__metric-icon" aria-hidden="true"><use href="#i-gauge"/></svg>Midpoint payback</dt>
+                  <dd class="calculator__metric-value"><output data-js="calc-payback">{{ CALC.payback }}</output></dd>
+                </div>
+              </dl>
+              <p class="calculator__roi"><span class="calculator__roi-label">Indicative first-year ROI</span><output class="calculator__roi-value" data-js="calc-roi">{{ CALC.roi }}</output></p>
+              <ul class="calculator__benefits">
+                <li class="calculator__benefit"><svg class="icon icon--sm calculator__benefit-icon" aria-hidden="true"><use href="#i-check"/></svg>Fewer manual entries and hand-offs</li>
+                <li class="calculator__benefit"><svg class="icon icon--sm calculator__benefit-icon" aria-hidden="true"><use href="#i-check"/></svg>Exceptions stop for human review</li>
+                <li class="calculator__benefit"><svg class="icon icon--sm calculator__benefit-icon" aria-hidden="true"><use href="#i-check"/></svg>Source evidence stays inspectable</li>
+                <li class="calculator__benefit"><svg class="icon icon--sm calculator__benefit-icon" aria-hidden="true"><use href="#i-check"/></svg>Works beside your current systems</li>
+              </ul>
+              <a class="btn btn--primary btn--block" href="#book" data-js="calc-use">Book an audit with this estimate <svg class="icon icon--sm btn__icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+              <p class="calculator__note">Planning estimate, not a quote or a savings guarantee. The audit replaces assumptions with your real documents, rules and integration constraints. Hosting and model use run on your own accounts and are visible there.</p>
+            </div>
+
+            <!-- Fixed summary for phones: visible while the controls are on screen and the results are not (calculator.js) -->
+            <div class="calc-bar" data-js="calc-bar">
+              <p class="calc-bar__summary" data-js="calc-bar-summary">{{ CALC.price }} · {{ CALC.hours }}</p>
+              <a class="calc-bar__details" href="#calc-results">Details ↓</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section faq" id="faq" aria-labelledby="faq-title">
+        <div class="container">
+        <div class="section-head">
+          <h2 class="section-head__title" id="faq-title">A few practical questions.</h2>
+        </div>
+          <div class="faq__layout">
+            <div class="faq__list">
+            <details class="faq-item" name="faq" id="faq-alternatives" open>
+              <summary class="faq-item__question">
+                <span class="faq-item__question-text">Why not Docparser, Nanonets, Rossum or Hubdoc?</span>
+                <svg class="icon faq-item__chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+              </summary>
+              <div class="faq-item__answer">
+                <p class="faq-item__text">Use them if your documents are clean, single-page invoices with stable layouts and you don’t need to match them against your own orders. They break in three places: tables (rows come apart), evidence (you get a value, not the passage it came from) and matching against your PO, stock or ledger. They also charge per document for as long as you use them. I build the part that sits after capture — checks, matching, review, export — and you own it.</p>
+              </div>
+            </details>
+            <details class="faq-item" name="faq">
+              <summary class="faq-item__question">
+                <span class="faq-item__question-text">Our documents are too different.</span>
+                <svg class="icon faq-item__chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+              </summary>
+              <div class="faq-item__answer">
+                <p class="faq-item__text">That is what the audit is for. I map document families, exceptions and business rules on your real documents before proposing anything. The first version covers the family with the most volume, not everything at once.</p>
+              </div>
+            </details>
+            <details class="faq-item" name="faq">
+              <summary class="faq-item__question">
+                <span class="faq-item__question-text">We have phone photos and handwriting.</span>
+                <svg class="icon faq-item__chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+              </summary>
+              <div class="faq-item__answer">
+                <p class="faq-item__text">Photos are straightened and cleaned (deskew, contrast, perspective) before OCR. Handwritten quantities and signatures are the fields most often held for review, so they get a human eye rather than a guess. Expect more review on handwriting — not wrong data in your system.</p>
+              </div>
+            </details>
+            <details class="faq-item" name="faq">
+              <summary class="faq-item__question">
+                <span class="faq-item__question-text">What accuracy should I expect?</span>
+                <svg class="icon faq-item__chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+              </summary>
+              <div class="faq-item__answer">
+                <p class="faq-item__text">Accuracy differs by field type and scan quality, so I don’t promise a percentage before seeing your documents. Step one is a measured run on 100–200 of yours: how many fields verify automatically, how many go to review, and — the number that matters — how many wrong values reach your system. The review gate keeps that last number at zero by design.</p>
+              </div>
+            </details>
+            <details class="faq-item" name="faq">
+              <summary class="faq-item__question">
+                <span class="faq-item__question-text">How long does it take?</span>
+                <svg class="icon faq-item__chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+              </summary>
+              <div class="faq-item__answer">
+                <p class="faq-item__text">Audit: 30 minutes. Written scope: within 3 working days. Focused MVP: 2–4 weeks. Production build: 6–12 weeks, depending mostly on integrations.</p>
+              </div>
+            </details>
+            <details class="faq-item" name="faq">
+              <summary class="faq-item__question">
+                <span class="faq-item__question-text">What happens when a supplier changes their layout?</span>
+                <svg class="icon faq-item__chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+              </summary>
+              <div class="faq-item__answer">
+                <p class="faq-item__text">Extraction is layout-aware, not template-bound, so small changes pass. A genuinely new layout fails its checks and lands in review instead of exporting wrong data, and the corrections made there are used to adjust the system. Under a support retainer I handle new layouts as they appear.</p>
+              </div>
+            </details>
+            <details class="faq-item" name="faq">
+              <summary class="faq-item__question">
+                <span class="faq-item__question-text">Who fixes it in six months?</span>
+                <svg class="icon faq-item__chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+              </summary>
+              <div class="faq-item__answer">
+                <p class="faq-item__text">You can: the handover includes deployment docs, a test checklist and the code in your repository. If you’d rather not, a monthly retainer covers monitoring, layout changes and small extensions. It is optional and cancellable.</p>
+              </div>
+            </details>
+            <details class="faq-item" name="faq">
+              <summary class="faq-item__question">
+                <span class="faq-item__question-text">Our documents cannot leave our environment.</span>
+                <svg class="icon faq-item__chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+              </summary>
+              <div class="faq-item__answer">
+                <p class="faq-item__text">Then they don’t. OCR runs on open-source engines on a server you control; where a language model is used, it can be an open-weights model on the same server. Cloud models are used only when you allow it, on your own account.</p>
+              </div>
+            </details>
+            <details class="faq-item" name="faq">
+              <summary class="faq-item__question">
+                <span class="faq-item__question-text">We don’t want to change our accounting or warehouse system.</span>
+                <svg class="icon faq-item__chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+              </summary>
+              <div class="faq-item__answer">
+                <p class="faq-item__text">You won’t. The system feeds Xero, QuickBooks, Sage or your WMS through their APIs, or through a reviewed CSV import where that is safer. Your team keeps working where they already work.</p>
+              </div>
+            </details>
+            <details class="faq-item" name="faq">
+              <summary class="faq-item__question">
+                <span class="faq-item__question-text">Where are you based and how do we work together?</span>
+                <svg class="icon faq-item__chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+              </summary>
+              <div class="faq-item__answer">
+                <p class="faq-item__text">Kyiv, two hours ahead of London. A weekly call, a shared Telegram or Slack channel, and a working demo every week rather than a status deck. I sign your NDA or mine.</p>
+              </div>
+            </details>
+            </div>
+            <aside class="faq-aside" aria-labelledby="faq-aside-title">
+              <h3 class="faq-aside__title" id="faq-aside-title">Still unsure?</h3>
+              <p class="faq-aside__text">Ask me directly — I reply within one working day.</p>
+              <div class="faq-aside__actions">
+                <a class="btn btn--primary" href="{{ CALENDLY_URL }}" target="_blank" rel="noopener">Book a 30-min audit</a>
+                <a class="text-link" href="{{ TELEGRAM_URL }}" target="_blank" rel="noopener">Message on Telegram <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section book" id="book" aria-labelledby="book-title">
+        <div class="container">
+        <div class="section-head">
+          <p class="section-head__eyebrow eyebrow">No sales script · no obligation</p>
+          <h2 class="section-head__title" id="book-title">Book a free workflow audit</h2>
+          <p class="section-head__lead">Tell me what arrives, what people do with it, and where the result needs to go. Within 3 working days you get a written outline of the right system, the risky assumptions and a sensible first version.</p>
+        </div>
+          <div class="book__columns">
+            <div class="book__calendly" data-js="calendly">
+              <div class="book__calendly-fallback" data-js="calendly-fallback">
+                <svg class="icon icon--lg book__calendly-icon" aria-hidden="true"><use href="#i-calendar-days"/></svg>
+                <a class="btn btn--primary" href="{{ CALENDLY_URL }}" target="_blank" rel="noopener">Choose a time in Calendly <svg class="icon icon--sm btn__icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+              </div>
+            </div>
+            <div class="book__form">
+              <h3 class="book__form-title">Prefer to write?</h3>
+              <form class="audit-form" action="{{ AUDIT_URL }}" method="post" data-js="audit-form">
+                <p class="audit-form__estimate" data-js="audit-estimate" hidden></p>
+                <div class="audit-form__field">
+                  <label class="audit-form__label" for="audit-email">Work email</label>
+                  <input class="audit-form__input" id="audit-email" name="email" type="email" autocomplete="email" placeholder="you@company.com" maxlength="254" required>
+                </div>
+                <div class="audit-form__field">
+                  <label class="audit-form__label" for="audit-segment">Your segment</label>
+                  <select class="audit-form__input" id="audit-segment" name="segment" required>
+                    <option value="">Select your segment</option>
+                    <option>Warehouse &amp; logistics</option>
+                    <option>Construction &amp; trades</option>
+                    <option>Finance &amp; back office</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <fieldset class="audit-form__choices">
+                  <legend class="audit-form__label">How should we continue?</legend>
+                  <div class="audit-form__choice-list">
+                    <label class="audit-form__choice">
+                      <input class="audit-form__radio audit-form__radio--telegram" type="radio" name="contactMethod" value="telegram" data-js="audit-contact">
+                      <svg class="icon icon--sm" aria-hidden="true"><use href="#i-send"/></svg>Telegram
+                    </label>
+                    <label class="audit-form__choice">
+                      <input class="audit-form__radio" type="radio" name="contactMethod" value="call" checked data-js="audit-contact">
+                      <svg class="icon icon--sm" aria-hidden="true"><use href="#i-phone-call"/></svg>Call
+                    </label>
+                  </div>
+                </fieldset>
+                <div class="audit-form__field audit-form__field--telegram" data-js="audit-telegram-field">
+                  <label class="audit-form__label" for="audit-telegram">Your Telegram username</label>
+                  <input class="audit-form__input" id="audit-telegram" name="telegram" type="text" placeholder="@username" maxlength="80" autocomplete="off" data-js="audit-telegram">
+                </div>
+                <div class="audit-form__field">
+                  <label class="audit-form__label" for="audit-paperwork">What does the workflow look like today?</label>
+                  <textarea class="audit-form__input audit-form__input--textarea" id="audit-paperwork" name="paperwork" rows="5" minlength="10" maxlength="5000" required placeholder="What arrives, who handles it, where errors happen, and which system should receive the result?"></textarea>
+                </div>
+                <input type="hidden" name="calculatorSnapshot" data-js="audit-snapshot">
+                <input type="hidden" name="startedAt" data-js="audit-started">
+                <div class="visually-hidden" aria-hidden="true">
+                  <label for="audit-company-website">Company website</label>
+                  <input id="audit-company-website" name="company_website" type="text" tabindex="-1" autocomplete="off">
+                </div>
+                <button class="audit-form__submit btn btn--primary btn--block" type="submit" data-js="audit-submit">Send my workflow</button>
+                <p class="audit-form__status" role="status" data-js="audit-status"></p>
+                <p class="audit-form__micro">This requests a free initial audit. It does not create a contract or commit you to a build.</p>
+              </form>
+            </div>
+          </div>
+          <p class="book__direct">Prefer to message now?
+            <a class="text-link" href="{{ TELEGRAM_URL }}" target="_blank" rel="noopener">Open Telegram <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner container">
+        <p class="site-footer__text">Yura Sachenko · Independent document automation · Kyiv, working with UK and EU teams</p>
+        <ul class="site-footer__links">
+          <!-- TODO: Email link (mailto:) — address on sachenkolabs.tech not yet provided -->
+          <li><a class="site-footer__link text-link" href="{{ TELEGRAM_URL }}" target="_blank" rel="noopener">Telegram</a></li>
+          <!-- TODO: LinkedIn link — URL not yet provided; omitted until it is -->
+          <li><a class="site-footer__link text-link" href="#main">Back to top ↑</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
